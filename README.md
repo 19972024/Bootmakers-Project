@@ -1,40 +1,137 @@
 # Bootmakers-Project
 
+![image](https://github.com/user-attachments/assets/87313858-2d05-4d2e-8c02-017f294b8e5e)
 
+¿Listo para las mejores estadisticas de las 5 principales ligas europeas?
+¿Queres ver las principales caracteristicas de cada liga?
+¿Te gustaria saber que estadistica es mejor para apostar para tu equipo?
 
-Ready for those amazing holidays you were planning and waiting so much?
-Maybe waiting for an important business trip that will boost your career?
-Planning a fairy tale getaway with your couple for a magic proposal?
-When looking for a flight most people look for prices or times. However, many other items are key to get a wonderful or a nigthmare flight experience.
+Contenido
+Fuentes de datos
 
-In 'Flight Judge' we believe in altruism and social justice. Hence we have designed a place were travellers can express their opinions about their flight experiences. You can also rate your onw flight and help future travellers!
+Análisis exploratorio de datos
 
-Link to the app: https://flight-judge.streamlit.app/
+Estadísticas descriptivas
 
-Content
-Data Sources
+Modelos
 
-Exploratory Data Analysis
+Objetivo y fuentes de datos
+Objetivo: análisis de las 5 principales ligas europeas y sus principales estadisticas. 
 
-Descriptive Statistics
+Fuente de datos: https://www.football-data.co.uk/
 
-Models
+Conjunto de datos inicial: 8955 filas y 106 columnas con las siguientes variables:
 
-Objective and Data Sources
-Objective: analysis of real airlines based on reviews & other data provided by previous customers.
+Div = League Division
+Date = Match Date (dd/mm/yy)
+HomeTeam = Home Team
+AwayTeam = Away Team
+FTHG = Full Time Home Team Goals
+FTAG = Full Time Away Team Goals
+FTR = Full Time Result (H=Home Win, D=Draw, A=Away Win)
+HTHG = Half Time Home Team Goals
+HTAG = Half Time Away Team Goals
+HTR = Half Time Result (H=Home Win, D=Draw, A=Away Win)
 
-Data Source: ‘128k Airline Reviews’ (https://www.kaggle.com/datasets/joelljungstrom/128k-airline-reviews).
+Attendance = Crowd Attendance
+Referee = Match Referee
+HS = Home Team Shots
+AS = Away Team Shots
+HST = Home Team Shots on Target
+AST = Away Team Shots on Target
+HHW = Home Team Hit Woodwork
+AHW = Away Team Hit Woodwork
+HC = Home Team Corners
+AC = Away Team Corners
+HF = Home Team Fouls Committed
+AF = Away Team Fouls Committed
+HO = Home Team Offsides
+AO = Away Team Offsides
+HY = Home Team Yellow Cards
+AY = Away Team Yellow Cards
+HR = Home Team Red Cards
+AR = Away Team Red Cards
+HBP = Home Team Bookings Points (10 = yellow, 25 = red)
+ABP = Away Team Bookings Points (10 = yellow, 25 = red)
 
-Initial Dataset: 129,454 rows & 22 columns with the following variables:
+Key to 1X2 (match) betting odds data:
 
-Aircraft
-Airline
-Cabin Type (Economy, Premium Economy, Business, First Class)
-Dates (trip, publication)
-Ratings (Entertainment, Cabin service, Ground service, Food, Wi-Fi, Seat comfort, Value for money)
-Geographic variables: Origin Country, Route
-Overall Score: Total score (0-10) of the trip
-Recommended
-Review (title, body)
-Travel Type (Solo, Couple, Family + Business, Leisure)
-Trip Verification
+B365H = Bet365 home win odds
+B365D = Bet365 draw odds
+B365A = Bet365 away win odds
+BSH = Blue Square home win odds
+BSD = Blue Square draw odds
+BSA = Blue Square away win odds
+BWH = Bet&Win home win odds
+BWD = Bet&Win draw odds
+BWA = Bet&Win away win odds
+GBH = Gamebookers home win odds
+GBD = Gamebookers draw odds
+GBA = Gamebookers away win odds
+IWH = Interwetten home win odds
+IWD = Interwetten draw odds
+IWA = Interwetten away win odds
+LBH = Ladbrokes home win odds
+LBD = Ladbrokes draw odds
+LBA = Ladbrokes away win odds
+PSH = Pinnacle Sports home win odds
+PSD = Pinnacle Sports draw odds
+PSA = Pinnacle Sports away win odds
+SOH = Sporting Odds home win odds
+SOD = Sporting Odds draw odds
+SOA = Sporting Odds away win odds
+SBH = Sportingbet home win odds
+SBD = Sportingbet draw odds
+SBA = Sportingbet away win odds
+SJH = Stan James home win odds
+SJD = Stan James draw odds
+SJA = Stan James away win odds
+SYH = Stanleybet home win odds
+SYD = Stanleybet draw odds
+SYA = Stanleybet away win odds
+VCH = VC Bet home win odds
+VCD = VC Bet draw odds
+VCA = VC Bet away win odds
+WHH = William Hill home win odds
+WHD = William Hill draw odds
+WHA = William Hill away win odds
+
+Bb1X2 = Number of BetBrain bookmakers used to calculate match odds averages and maximums
+BbMxH = Betbrain maximum home win odds
+BbAvH = Betbrain average home win odds
+BbMxD = Betbrain maximum draw odds
+BbAvD = Betbrain average draw win odds
+BbMxA = Betbrain maximum away win odds
+BbAvA = Betbrain average away win odds
+
+Key to total goals betting odds:
+
+BbOU = Number of BetBrain bookmakers used to calculate over/under 2.5 goals (total goals) averages and maximums
+BbMx>2.5 = Betbrain maximum over 2.5 goals
+BbAv>2.5 = Betbrain average over 2.5 goals
+BbMx<2.5 = Betbrain maximum under 2.5 goals
+BbAv<2.5 = Betbrain average under 2.5 goals
+
+GB>2.5 = Gamebookers over 2.5 goals
+GB<2.5 = Gamebookers under 2.5 goals
+B365>2.5 = Bet365 over 2.5 goals
+B365<2.5 = Bet365 under 2.5 goals
+
+Key to Asian handicap betting odds:
+
+BbAH = Number of BetBrain bookmakers used to Asian handicap averages and maximums
+BbAHh = Betbrain size of handicap (home team)
+BbMxAHH = Betbrain maximum Asian handicap home team odds
+BbAvAHH = Betbrain average Asian handicap home team odds
+BbMxAHA = Betbrain maximum Asian handicap away team odds
+BbAvAHA = Betbrain average Asian handicap away team odds
+
+GBAHH = Gamebookers Asian handicap home team odds
+GBAHA = Gamebookers Asian handicap away team odds
+GBAH = Gamebookers size of handicap (home team)
+LBAHH = Ladbrokes Asian handicap home team odds
+LBAHA = Ladbrokes Asian handicap away team odds
+LBAH = Ladbrokes size of handicap (home team)
+B365AHH = Bet365 Asian handicap home team odds
+B365AHA = Bet365 Asian handicap away team odds
+B365AH = Bet365 size of handicap (home team)
