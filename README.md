@@ -1,6 +1,6 @@
 # Bootmakers-Project
 
-https://thumbs.dreamstime.com/z/estad%C3%ADsticas-del-partido-de-f%C3%BAtbol-119981523.jpg
+estadísticas-del-partido-de-fútbol-119981523
 
 Ready for those amazing holidays you were planning and waiting so much?
 Maybe waiting for an important business trip that will boost your career?
